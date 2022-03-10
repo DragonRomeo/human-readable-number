@@ -24,16 +24,27 @@ function toReadable(number) {
         console.log('третья переменная равна ' + thirdNumb2)
             // let secondNumb3 = (arrayOfThird[1] + arrayOfThird[2]).join('');
             // console.log('Тест складывания двух массивов' + secondNumb3);
-        if (arrayOfThird[1] > 2) {
-            return arrayHundred[firstNumb2] + ' ' + arr3[secondNumb2] + ' ' + arr2[thirdNumb2];
+        if (arrayOfThird[1] >= 2) {
+            if (arrayOfThird[2] != 0) {
+                return arrayHundred[firstNumb2] + ' ' + arr3[secondNumb2] + ' ' + arr2[thirdNumb2];
+            } else {
+                return arrayHundred[firstNumb2] + ' ' + arr3[secondNumb2];
+            }
+
         } else {
             let firstNumb3 = arrayOfThird[0];
-            delete arrayOfThird[0];
-            let secondNumb3 = arrayOfThird.join('');
-            console.log('secondNumb3 равен ' + secondNumb3);
-            return arrayHundred[firstNumb2] + ' ' + arr2[secondNumb3];
+            if (arrayOfThird[1] > 0) {
+                delete arrayOfThird[0];
+                let secondNumb3 = arrayOfThird.join('');
+                console.log('secondNumb3 равен ' + secondNumb3);
+                return arrayHundred[firstNumb2] + ' ' + arr2[secondNumb3];
+            } else {
+                return arrayHundred[firstNumb2] + ' ' + arr2[arrayOfThird[2]];
+
+            }
+
         }
 
     }
 }
-console.log(toReadable(835));
+console.log(toReadable(900));
