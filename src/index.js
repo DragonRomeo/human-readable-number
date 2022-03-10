@@ -13,7 +13,12 @@ module.exports = function toReadable(number) {
             console.log('первое число =' + firstNumb1);
             let secondNumb1 = arrayOfTwo[1];
             console.log('второе число =' + secondNumb1);
-            return arr3[firstNumb1] + ' ' + arr2[secondNumb1];
+            if (arrayOfTwo[1] > 0) {
+                return arr3[firstNumb1] + ' ' + arr2[secondNumb1];
+            } else {
+                return arr3[firstNumb1];
+            }
+
         } else if (number >= 100) {
             let arrayOfThird = ("" + number).split("").map(Number)
             let firstNumb2 = arrayOfThird[0];
@@ -52,4 +57,4 @@ module.exports = function toReadable(number) {
 
         }
     }
-    // console.log(toReadable(901));
+    // console.log(toReadable(90));
